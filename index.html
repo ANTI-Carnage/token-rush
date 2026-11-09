@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0b1d3a">
+<title>Token Rush</title>
+<meta name="description" content="Crack chests, dodge monsters and the storm, and find the golden token. A free browser game.">
+<meta property="og:title" content="Token Rush">
+<meta property="og:description" content="Crack chests, dodge monsters and the storm, find the golden token.">
+<meta property="og:type" content="website">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<button id="openBtn" class="hidden" aria-label="Open chest">OPEN</button>
+<div id="topBtns"><button id="pauseBtn" aria-label="Pause">II</button><button id="muteBtn" aria-label="Sound">&#128266;</button></div>
+
+<div id="title" class="overlay show">
+  <div class="card">
+    <div class="logo"><span class="l1">TOKEN</span><span class="l2">RUSH</span></div>
+    <p class="tag">Crack chests. Dodge the storm. Find the golden token.</p>
+    <button class="big" id="playBtn">PLAY</button>
+    <p class="best">Best score: <b id="bestTitle">0</b></p>
+    <div class="howto">
+      <div class="row"><span class="k">Move</span><span id="hMove">WASD / arrows</span></div>
+      <div class="row"><span class="k">Open chest</span><span id="hOpen">hold SPACE or E</span></div>
+      <div class="row"><span class="k">Pause / sound</span><span>P &middot; M</span></div>
+    </div>
+    <div class="loot">
+      <div><i class="dot g"></i>Good loot: shield, speed, extra life, radar, freeze, gold</div>
+      <div><i class="dot b"></i>Bad loot: traps, slime, storm surge, mimic tokens, ambushes</div>
+      <div><i class="dot t"></i>One chest per level holds the <b>golden token</b></div>
+    </div>
+  </div>
+</div>
+
+<div id="pause" class="overlay">
+  <div class="card small">
+    <h2>PAUSED</h2>
+    <button class="big" id="resumeBtn">RESUME</button>
+    <button class="ghost" id="quitBtn">QUIT TO TITLE</button>
+  </div>
+</div>
+
+<div id="clear" class="overlay">
+  <div class="card small">
+    <div class="tokenart"></div>
+    <h2 id="clearTitle">LEVEL 1 CLEARED</h2>
+    <p id="clearStats"></p>
+    <button class="big" id="nextBtn">NEXT LEVEL</button>
+  </div>
+</div>
+
+<div id="over" class="overlay">
+  <div class="card small">
+    <h2 class="red">ELIMINATED</h2>
+    <p id="overStats"></p>
+    <p id="newBest" class="badge hidden">NEW BEST!</p>
+    <button class="big" id="againBtn">PLAY AGAIN</button>
+    <button class="ghost" id="titleBtn">TITLE</button>
+  </div>
+</div>
+
+<div id="win" class="overlay">
+  <div class="card small">
+    <div class="tokenart"></div>
+    <h2 class="gold">TOKEN LEGEND</h2>
+    <p id="winStats"></p>
+    <button class="big" id="keepBtn">KEEP GOING</button>
+    <button class="ghost" id="winAgainBtn">NEW GAME</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
