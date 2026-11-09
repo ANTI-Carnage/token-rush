@@ -1,0 +1,49 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden;background:#0b1d3a;color:#fff;
+  font-family:"Arial Black","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+  touch-action:none;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;overscroll-behavior:none}
+canvas{display:block;position:fixed;left:0;top:0;touch-action:none}
+.hidden{display:none!important}
+button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:16px;
+  background:radial-gradient(circle at 50% 40%,rgba(40,20,90,.55),rgba(5,10,30,.85));z-index:10}
+.overlay.show{display:flex}
+.card{width:100%;max-width:440px;max-height:100%;overflow:auto;text-align:center;padding:22px 20px;border-radius:20px;
+  background:linear-gradient(160deg,#2b4fd6 0%,#6b2bd6 60%,#a42bd6 100%);
+  box-shadow:0 10px 0 rgba(0,0,0,.35),0 0 0 4px rgba(255,255,255,.15) inset}
+.card.small{max-width:360px}
+.logo{font-style:italic;font-weight:900;line-height:.9;margin:4px 0 10px;transform:rotate(-3deg)}
+.logo span{display:block}
+.l1{font-size:52px;color:#fff;text-shadow:0 4px 0 #1b1464,0 0 18px rgba(120,200,255,.6)}
+.l2{font-size:66px;background:linear-gradient(#fff6b0,#ffc531 55%,#ff8a00);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 4px 0 #7a3d00)}
+.tag{font-size:14px;opacity:.95;margin-bottom:16px;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700}
+h2{font-style:italic;font-size:30px;margin:6px 0 10px;text-shadow:0 3px 0 rgba(0,0,0,.35)}
+h2.red{color:#ff6b6b}h2.gold{color:#ffd34d}
+p{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;line-height:1.45;margin-bottom:12px}
+.big{display:block;margin:6px auto 10px;min-width:200px;padding:14px 34px;font-size:26px;font-style:italic;font-weight:900;color:#3a2000;
+  border:0;border-radius:14px;background:linear-gradient(#fff38a,#ffc531 50%,#ff9f1a);box-shadow:0 6px 0 #a15a00;letter-spacing:1px}
+.big:active{transform:translateY(4px);box-shadow:0 2px 0 #a15a00}
+.ghost{display:block;margin:4px auto 0;padding:10px 22px;font-size:15px;font-style:italic;color:#fff;background:rgba(0,0,0,.25);border:2px solid rgba(255,255,255,.35);border-radius:12px}
+.best{font-size:15px;margin:2px 0 14px}
+.howto{background:rgba(0,0,0,.22);border-radius:14px;padding:10px 12px;margin-bottom:10px;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;font-size:14px}
+.row{display:flex;justify-content:space-between;gap:10px;padding:3px 0}
+.k{color:#ffd34d}
+.loot{text-align:left;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:600;font-size:13px;line-height:1.5;opacity:.95}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:middle}
+.dot.g{background:#4ee04a}.dot.b{background:#ff5050}.dot.t{background:#ffc531;box-shadow:0 0 8px #ffc531}
+.badge{display:inline-block;background:#ffd34d;color:#3a2000;padding:4px 14px;border-radius:999px;font-style:italic}
+.tokenart{width:84px;height:84px;margin:0 auto 4px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#fff7c2,#ffcc33 40%,#e09000 75%,#8a5200);
+  box-shadow:0 0 0 5px #b06d00 inset,0 0 30px rgba(255,200,60,.9);position:relative;animation:spin 2.4s ease-in-out infinite}
+.tokenart:after{content:"X";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:40px;color:#8a5200;font-style:normal}
+@keyframes spin{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.15)}}
+#openBtn{position:fixed;right:22px;bottom:30px;width:104px;height:104px;border-radius:50%;z-index:5;
+  font-size:20px;font-style:italic;font-weight:900;color:rgba(255,255,255,.8);background:rgba(255,255,255,.14);
+  border:4px solid rgba(255,255,255,.45);box-shadow:0 4px 0 rgba(0,0,0,.3)}
+#openBtn.near{color:#3a2000;background:radial-gradient(circle at 40% 35%,#fff59a,#ffc531 60%,#ff9f1a);border-color:#fff;animation:pulse .7s ease-in-out infinite}
+#openBtn.held{transform:scale(.92)}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,210,60,.7),0 4px 0 rgba(0,0,0,.3)}50%{box-shadow:0 0 0 12px rgba(255,210,60,0),0 4px 0 rgba(0,0,0,.3)}}
+#topBtns{position:fixed;top:10px;right:10px;display:none;gap:8px;z-index:6}
+body.playing #topBtns{display:flex}
+#topBtns button{width:40px;height:40px;border-radius:12px;border:2px solid rgba(255,255,255,.4);background:rgba(0,0,0,.4);color:#fff;font-size:16px;font-weight:900}
